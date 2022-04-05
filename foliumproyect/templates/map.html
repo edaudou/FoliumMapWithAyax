@@ -1,0 +1,21 @@
+{%extends 'partials/base.html'%}
+
+{%block content%}
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-center">Information</h3>
+                <p class="text-center">
+                    CLICK TO ADD A CURSOR <br>
+                    DOUBLE CLICK TO REMOVE IT <br>
+                    CLICK ON A CURSOR TO DATA <br>
+                    LAT and LONG on Console LOG
+                </p>
+            </div>        
+            <div class="col-md-6">
+                <h3 class="text-center">Geo Map</h3>
+                {{m | safe}}
+            </div>
+        </div>
+    </div>
+{%endblock%}

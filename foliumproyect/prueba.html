@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_977fd5b5d34c46309394e764c62443d9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_977fd5b5d34c46309394e764c62443d9" ></div>
+        
+</body>
+<script>    
+    
+            var map_977fd5b5d34c46309394e764c62443d9 = L.map(
+                "map_977fd5b5d34c46309394e764c62443d9",
+                {
+                    center: [42.46095348879498, -2.4314117431640625],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_46424342326549ed89572749df75955c = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_977fd5b5d34c46309394e764c62443d9);
+        
+    
+            var marker_712c51918179445c86b2f556756c2de9 = L.marker(
+                [42.4677759035072, -2.4306285381317134],
+                {}
+            ).addTo(map_977fd5b5d34c46309394e764c62443d9);
+        
+    
+            var icon_80d237a4acce4bd2a20c439cf88f6184 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_712c51918179445c86b2f556756c2de9.setIcon(icon_80d237a4acce4bd2a20c439cf88f6184);
+        
+    
+        var popup_619315773ddd4e08a2b05e6fe442e298 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4ab97cac80e1451e9321d0af918129d9 = $(`<div id="html_4ab97cac80e1451e9321d0af918129d9" style="width: 100.0%; height: 100.0%;">Hospital San Pedro<br>Caducidad: 2022-03-05 00:00:00</div>`)[0];
+            popup_619315773ddd4e08a2b05e6fe442e298.setContent(html_4ab97cac80e1451e9321d0af918129d9);
+        
+
+        marker_712c51918179445c86b2f556756c2de9.bindPopup(popup_619315773ddd4e08a2b05e6fe442e298)
+        ;
+
+        
+    
+    
+            marker_712c51918179445c86b2f556756c2de9.bindTooltip(
+                `<div>
+                     Click para mas detalles
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+                function newMarker(e){
+                    var new_mark = L.marker().setLatLng(e.latlng).addTo(map_977fd5b5d34c46309394e764c62443d9);
+                    new_mark.dragging.enable();
+                    new_mark.on('dblclick', function(e){ map_977fd5b5d34c46309394e764c62443d9.removeLayer(e.target)})
+                    var lat = e.latlng.lat.toFixed(4),
+                       lng = e.latlng.lng.toFixed(4);
+                    new_mark.bindPopup("Latitude: " + lat + "<br>Longitude: " + lng );
+                    };
+                map_977fd5b5d34c46309394e764c62443d9.on('click', newMarker);
+            
+    
+            var marker_a367ca29e0f446d0bf78b80b81ca6c5b = L.marker(
+                [42.45435593416059, -2.4276190996170044],
+                {}
+            ).addTo(map_977fd5b5d34c46309394e764c62443d9);
+        
+    
+            var icon_bbe4512a2b054b518a6268c189396b18 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a367ca29e0f446d0bf78b80b81ca6c5b.setIcon(icon_bbe4512a2b054b518a6268c189396b18);
+        
+    
+        var popup_78cb6dde474e45458fb875b778b4be51 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7a6fbd990b32484badfec539d4ff31e5 = $(`<div id="html_7a6fbd990b32484badfec539d4ff31e5" style="width: 100.0%; height: 100.0%;">Hospital San Lorenzo<br>Caducidad: 2022-12-11 00:00:00</div>`)[0];
+            popup_78cb6dde474e45458fb875b778b4be51.setContent(html_7a6fbd990b32484badfec539d4ff31e5);
+        
+
+        marker_a367ca29e0f446d0bf78b80b81ca6c5b.bindPopup(popup_78cb6dde474e45458fb875b778b4be51)
+        ;
+
+        
+    
+    
+            marker_a367ca29e0f446d0bf78b80b81ca6c5b.bindTooltip(
+                `<div>
+                     Click para mas detalles
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_88b5ff2c600a4364984accb408c745ea = L.marker(
+                [42.46366038267497, -2.4198567867279053],
+                {}
+            ).addTo(map_977fd5b5d34c46309394e764c62443d9);
+        
+    
+            var icon_168637cb69904e028b382f50b85897d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_88b5ff2c600a4364984accb408c745ea.setIcon(icon_168637cb69904e028b382f50b85897d9);
+        
+    
+        var popup_c0a6fad9e7f34012ac71f2416d92d2cf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_98818e06a9a748f3884c3aa6d00d4cb8 = $(`<div id="html_98818e06a9a748f3884c3aa6d00d4cb8" style="width: 100.0%; height: 100.0%;">Hospital San Atilano<br>Caducidad: 2023-05-03 00:00:00</div>`)[0];
+            popup_c0a6fad9e7f34012ac71f2416d92d2cf.setContent(html_98818e06a9a748f3884c3aa6d00d4cb8);
+        
+
+        marker_88b5ff2c600a4364984accb408c745ea.bindPopup(popup_c0a6fad9e7f34012ac71f2416d92d2cf)
+        ;
+
+        
+    
+    
+            marker_88b5ff2c600a4364984accb408c745ea.bindTooltip(
+                `<div>
+                     Click para mas detalles
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b5e524cd3aa9478084b78a826ba2c778 = L.marker(
+                [42.4877759035072, -2.4306285381317134],
+                {}
+            ).addTo(map_977fd5b5d34c46309394e764c62443d9);
+        
+    
+            var icon_a31da1984f60436ba99047b108080bda = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b5e524cd3aa9478084b78a826ba2c778.setIcon(icon_a31da1984f60436ba99047b108080bda);
+        
+    
+        var popup_ae59a47192214aa1a163ab0a615e9ea2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c86c5469930548be89fa74f5273ed18f = $(`<div id="html_c86c5469930548be89fa74f5273ed18f" style="width: 100.0%; height: 100.0%;">Hospital Central<br>Caducidad: 2022-05-03 00:00:00</div>`)[0];
+            popup_ae59a47192214aa1a163ab0a615e9ea2.setContent(html_c86c5469930548be89fa74f5273ed18f);
+        
+
+        marker_b5e524cd3aa9478084b78a826ba2c778.bindPopup(popup_ae59a47192214aa1a163ab0a615e9ea2)
+        ;
+
+        
+    
+    
+            marker_b5e524cd3aa9478084b78a826ba2c778.bindTooltip(
+                `<div>
+                     Click para mas detalles
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e6238822d2d3455e8ef56bc07ccfa48f = L.marker(
+                [42.4577, -2.4384],
+                {}
+            ).addTo(map_977fd5b5d34c46309394e764c62443d9);
+        
+    
+            var icon_492bba372df14d83b5127cd209c64820 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e6238822d2d3455e8ef56bc07ccfa48f.setIcon(icon_492bba372df14d83b5127cd209c64820);
+        
+    
+        var popup_200037ca025744a7ab90901ce194dd1e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_86669f2114a74ab7bc4b2602db974644 = $(`<div id="html_86669f2114a74ab7bc4b2602db974644" style="width: 100.0%; height: 100.0%;">Hospital San Marino<br>Caducidad: 2022-03-25 00:00:00</div>`)[0];
+            popup_200037ca025744a7ab90901ce194dd1e.setContent(html_86669f2114a74ab7bc4b2602db974644);
+        
+
+        marker_e6238822d2d3455e8ef56bc07ccfa48f.bindPopup(popup_200037ca025744a7ab90901ce194dd1e)
+        ;
+
+        
+    
+    
+            marker_e6238822d2d3455e8ef56bc07ccfa48f.bindTooltip(
+                `<div>
+                     Click para mas detalles
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var mouse_position_c891daf9b2804d1ba2d164a5419ecc72 = new L.Control.MousePosition(
+                {"emptyString": "Unavailable", "lngFirst": false, "numDigits": 5, "position": "bottomright", "prefix": "", "separator": " : "}
+            );
+            mouse_position_c891daf9b2804d1ba2d164a5419ecc72.options["latFormatter"] =
+                undefined;
+            mouse_position_c891daf9b2804d1ba2d164a5419ecc72.options["lngFormatter"] =
+                undefined;
+            map_977fd5b5d34c46309394e764c62443d9.addControl(mouse_position_c891daf9b2804d1ba2d164a5419ecc72);
+        
+</script>

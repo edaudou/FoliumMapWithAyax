@@ -1,0 +1,16 @@
+{% extends 'partials/base.html' %}
+{%block person%}
+    {% comment %} {% for People in first_name %}
+    {{ People.first_name}}
+    {{ People.last_name }}
+    {{ student.birth_date }}
+    {{People.group}}
+    {% endfor %} {% endcomment %}
+    <br><br><br><br><br>
+    {% for people in personas %}
+    {{ people.first_name}}<br>
+    {{ people.last_name }}<br>
+    {{ people.birth_date }}<br>
+    {{ people.group }}<br><br>
+    {% endfor %}
+{%endblock%}
