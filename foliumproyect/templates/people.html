@@ -6,10 +6,9 @@
     {{ student.birth_date }}
     {{People.group}}
     {% endfor %} {% endcomment %}
-    <br><br><br><br><br>
+    <br><br><br>
     {% for people in personas %}
-    {{ people.first_name}}<br>
-    {{ people.last_name }}<br>
+    {{ people.first_name}} {{ people.last_name }}<br>
     {{ people.birth_date }}<br>
     {{ people.group }}<br><br>
     {% endfor %}
